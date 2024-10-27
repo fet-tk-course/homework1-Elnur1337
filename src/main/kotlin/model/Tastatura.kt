@@ -17,30 +17,30 @@ class Tastatura(private var matrix : List<List<Int>>) {
                 if (currentPosition.coordinateY == 0) {
                     return currentPosition
                 }
-                --currentPosition.coordinateY
-                return currentPosition
+                return instruction.pomjeri(currentPosition)
             }
             is Dole -> {
                 if (currentPosition.coordinateY == 2) {
                     return currentPosition
                 }
-                ++currentPosition.coordinateY
-                return currentPosition
+                return instruction.pomjeri(currentPosition)
             }
             is Lijevo -> {
                 if (currentPosition.coordinateX == 0) {
                     return currentPosition
                 }
-                --currentPosition.coordinateX
-                return currentPosition
+                return instruction.pomjeri(currentPosition)
             }
             else -> {
                 if (currentPosition.coordinateX == 2) {
                     return currentPosition
                 }
-                ++currentPosition.coordinateX
-                return currentPosition
+                return instruction.pomjeri(currentPosition)
             }
         }
+    }
+
+    fun getInputNumber(currentPosition: Pozicija) : Int {
+        return matrix[currentPosition.coordinateX][currentPosition.coordinateY]
     }
 }
