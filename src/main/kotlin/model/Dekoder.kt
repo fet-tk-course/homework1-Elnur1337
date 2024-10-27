@@ -1,18 +1,20 @@
 package fet.rmas.model
 
-class Dekoder(var keyboard : Tastatura, var instructions : List<String>) {
+class Dekoder(private val keyboard : Tastatura, private val instructions : List<String>) {
     private var currentPosition = Pozicija(1, 1)
-    fun dekodiraj() {
+    fun dekodiraj() : String {
+        var password = ""
         for (instruction in instructions) {
             for (char in instruction) {
                 when (char) {
                     '^' -> keyboard.pomjeri(currentPosition, Gore())
-                    '˘' -> keyboard.pomjeri(currentPosition, Dole())
+                    'ˇ' -> keyboard.pomjeri(currentPosition, Dole())
                     '>' -> keyboard.pomjeri(currentPosition, Desno())
                     '<' -> keyboard.pomjeri(currentPosition, Lijevo())
                 }
             }
-            println(keyboard.getInputNumber(currentPosition))
+            password += keyboard.getInputNumber(currentPosition)
         }
+        return password
     }
 }

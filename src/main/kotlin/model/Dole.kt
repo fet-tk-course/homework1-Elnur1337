@@ -4,7 +4,7 @@ import fet.rmas.contract.Instrukcija
 
 class Dole : Instrukcija {
     override fun pomjeri(currentPosition: Pozicija): Pozicija {
-        ++currentPosition.coordinateY
+        ++currentPosition.coordinateX
         return currentPosition
     }
 }
