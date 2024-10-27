@@ -11,6 +11,7 @@ class Dekoder(private val keyboard : Tastatura, private val instructions : List<
                     'ˇ' -> keyboard.pomjeri(currentPosition, Dole())
                     '>' -> keyboard.pomjeri(currentPosition, Desno())
                     '<' -> keyboard.pomjeri(currentPosition, Lijevo())
+                    else -> throw IllegalArgumentException("Karakter ${char} nije podrzan!")
                 }
             }
             password += keyboard.getInputNumber(currentPosition)
