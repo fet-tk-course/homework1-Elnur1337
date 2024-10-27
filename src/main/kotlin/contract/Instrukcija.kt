@@ -1,7 +1,7 @@
 package fet.rmas.contract
 
-import fet.rmas.model.Pozicija;
+import fet.rmas.model.Pozicija
 
 interface Instrukcija {
-    fun pomjeri(currentPosition: Pozicija) : Pozicija;
+    fun pomjeri(currentPosition: Pozicija) : Pozicija
 }
